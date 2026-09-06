@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>William (Bill) Howze — Senior Mobile QA Engineer</title>
+  <meta name="description" content="Senior mobile QA engineer in Portland, OR with 10+ years testing iOS, Android, and web products. Release QA, test strategy, accessibility, Appium and Playwright automation, AI-assisted testing.">
+  <link rel="canonical" href="https://williamhowze.com/">
+  <meta name="color-scheme" content="light dark">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="William (Bill) Howze — Senior Mobile QA Engineer">
+  <meta property="og:description" content="10+ years testing iOS, Android, and web products. Release ownership, test strategy, accessibility, automation, AI-assisted testing. Portland, OR.">
+  <meta property="og:url" content="https://williamhowze.com/">
+  <meta property="og:site_name" content="williamhowze.com">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="William (Bill) Howze — Senior Mobile QA Engineer">
+  <meta name="twitter:description" content="10+ years testing iOS, Android, and web products. Release ownership, test strategy, accessibility, automation, AI-assisted testing. Portland, OR.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f6feb'/%3E%3Ctext x='32' y='42' font-family='system-ui,sans-serif' font-size='30' font-weight='700' fill='white' text-anchor='middle'%3EBH%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --bg: #fbfbfa;
+      --surface: #ffffff;
+      --text: #1b1f24;
+      --muted: #5b6470;
+      --line: #e3e6ea;
+      --accent: #1f6feb;
+      --accent-ink: #ffffff;
+      --chip: #eef2f7;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1216;
+        --surface: #161a20;
+        --text: #e8ecf1;
+        --muted: #9aa5b3;
+        --line: #262c35;
+        --accent: #6aa9ff;
+        --accent-ink: #0b1220;
+        --chip: #1f2530;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+
+    header { margin-bottom: 40px; }
+    .eyebrow { color: var(--muted); font-size: 14px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 6px; }
+    h1 { font-size: clamp(30px, 6vw, 42px); line-height: 1.1; margin: 0 0 8px; letter-spacing: -.02em; }
+    .role { font-size: 18px; color: var(--muted); margin: 0 0 20px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; font-size: 15px; }
+    .links a { display: inline-flex; align-items: center; gap: 6px; }
+    .links svg { width: 16px; height: 16px; fill: currentColor; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: var(--accent-ink) !important;
+      padding: 9px 16px; border-radius: 8px; font-weight: 600;
+    }
+    .btn:hover { text-decoration: none; filter: brightness(1.08); }
+
+    section { margin-bottom: 40px; }
+    h2 {
+      font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 16px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    p { margin: 0 0 12px; }
+
+    .job { margin-bottom: 26px; }
+    .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; margin-bottom: 4px; }
+    .job-head h3 { font-size: 17px; margin: 0; }
+    .job-head .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
+    .job .where { color: var(--muted); font-size: 15px; margin: 0 0 8px; }
+    .job ul { margin: 0; padding-left: 20px; }
+    .job li { margin-bottom: 5px; }
+
+    .projects { display: grid; gap: 14px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
+    }
+    .card h3 { font-size: 16px; margin: 0 0 4px; }
+    .card .kind { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+    .card p { margin: 0; font-size: 15px; }
+
+    .skills { display: grid; gap: 14px; }
+    .skill-row h3 { font-size: 14px; margin: 0 0 6px; color: var(--muted); font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { background: var(--chip); border-radius: 6px; padding: 3px 10px; font-size: 14px; }
+
+    .edu p { margin: 0 0 6px; }
+    footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 20px; }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      .btn { display: none; }
+      .wrap { padding: 0; max-width: none; }
+    }
+  </style>
+</head>
+<body>
+<main class="wrap">
+
+  <header>
+    <p class="eyebrow">Portland, Oregon · Remote</p>
+    <h1>Bill Howze</h1>
+    <p class="role">Senior Mobile QA Engineer · Release QA · Software Test Engineer</p>
+    <nav class="links" aria-label="Contact and links">
+      <a class="btn" href="resume.pdf" download="Bill-Howze-Resume.pdf">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a.75.75 0 0 1 .75.75v7.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V1.75A.75.75 0 0 1 8 1ZM2 11.75a.75.75 0 0 1 1.5 0v1.5h9v-1.5a.75.75 0 0 1 1.5 0v1.5A1.5 1.5 0 0 1 12.5 14.75h-9A1.5 1.5 0 0 1 2 13.25v-1.5Z"/></svg>
+        Download résumé (PDF)
+      </a>
+      <a href="mailto:williamlhowze@gmail.com">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2ZM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 9.397a.75.75 0 0 1-.76 0L1.5 5.809v6.442Zm13-8.181v-.32a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25v.32L8 7.88l6.5-3.81Z"/></svg>
+        williamlhowze@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/bill-howze" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/whowze" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Senior mobile quality assurance professional with 10+ years testing high-traffic iOS, Android, web, and service-based products across healthcare, aviation, and e-commerce. Hands-on background in release ownership, feature QA, regression and exploratory testing, test strategy, defect triage, WCAG accessibility testing, and Appium and Playwright automation.</p>
+    <p>Trusted to assess release risk, approve production candidates, and translate requirements and code changes into actionable coverage. Currently using Claude and Codex CLI tools to analyze tickets and pull requests, find coverage gaps, and generate targeted manual and automated tests.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head"><h3>Android Release QA · Feature QA</h3><span class="when">Jun 2025 – Present</span></div>
+      <p class="where">Doximity · Remote</p>
+      <ul>
+        <li>Sole Android release QA: own weekly regression, build validation, release-risk assessment, and production sign-off.</li>
+        <li>Expanded into feature QA while keeping release ownership, partnering with engineering to validate new functionality and fixes.</li>
+        <li>Use Claude Code CLI and Codex CLI to analyze Jira tickets and GitHub pull requests, organize TestRail runs, identify coverage gaps, and create targeted manual and automated tests.</li>
+        <li>Run Appium and Playwright suites and extend automation coverage with AI-assisted development.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><h3>Quality Assurance Specialist</h3><span class="when">Jun 2024 – Aug 2025</span></div>
+      <p class="where">Odyssey Information Services for Southwest Airlines · Remote</p>
+      <ul>
+        <li>Manual QA across the Southwest Airlines iOS and Android apps in an Agile delivery environment.</li>
+        <li>Executed test plans, documented defects, validated fixes, and supported recurring production releases while surfacing risk early with developers and product owners.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><h3>iOS Developer · Structured On-the-Job Training</h3><span class="when">May 2023 – May 2024</span></div>
+      <p class="where">eBay · Selling team</p>
+      <ul>
+        <li>Transitioned from QA into a development assignment: built Swift and SwiftUI components, participated in code reviews, and wrote unit and UI automation tests for shipped work.</li>
+        <li>Completed focused training in Swift, SwiftUI, UIKit, MVVM, design patterns, TDD, and Git.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><h3>Software Engineer 3, Quality Assurance</h3><span class="when">2018 – 2023</span></div>
+      <p class="where">eBay · Portland, OR</p>
+      <ul>
+        <li>Owned mobile QA strategy across eBay Classifieds, Core, Core E2E, and Selling teams on iOS and Android.</li>
+        <li>Developed and maintained iOS UI automation in XCUITest; streamlined regression from weeks to days with focused, feature-driven suites.</li>
+        <li>Owned accessibility testing under eBay's company-wide mandate, validating against WCAG 2.1 AA with VoiceOver, TalkBack, Switch Control, Dynamic Type, and contrast tooling.</li>
+        <li>Led proof-of-concepts, trained new QA hires, and represented QA in design and release reviews.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><h3>Software Engineer 1 → 2, Quality Assurance</h3><span class="when">2013 – 2018</span></div>
+      <p class="where">eBay · Portland, OR</p>
+      <ul>
+        <li>Built test plans and strategies, including WCAG criteria, from requirements and specs in partnership with Product and Engineering.</li>
+        <li>Authored Objective-C and Swift automation for iOS client and service testing; contributed iOS and Android automation to the shared framework.</li>
+        <li>Administered feature flags, ran A/B experiments, validated APIs with Postman, and served as interim Scrum Master for the Selling team.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Shipped projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3><a href="https://apps.apple.com/us/app/hang-timer-30-day-challenge/id6774407493" target="_blank" rel="noopener">Hang Timer: 30-Day Challenge</a></h3>
+        <p class="kind">iOS app · Apple App Store</p>
+        <p>Consumer iOS app I designed, built, tested, and published using Claude-assisted development.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://whatdidibuild.app" target="_blank" rel="noopener">What Did I Build</a></h3>
+        <p class="kind">Developer web tool · Next.js on Vercel</p>
+        <p>Helps developers clearly describe what they built. Live site with its own domain, email, and API integrations.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://pdxcretins.com" target="_blank" rel="noopener">Cretins MC Member Portal</a></h3>
+        <p class="kind">Web app · Next.js, Supabase, Resend</p>
+        <p>Members-only club portal with passwordless email login, event signups, an admin area, and live treasury data synced from Google Sheets.</p>
+      </div>
+      <div class="card">
+        <h3>Exercise apps</h3>
+        <p class="kind">iOS · In development</p>
+        <p>A rucking tracker for distance, speed, weight, and goals, plus a wrist and forearm strength app.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-row">
+        <h3>Testing</h3>
+        <div class="chips">
+          <span class="chip">Release QA &amp; sign-off</span><span class="chip">Test strategy</span><span class="chip">Regression</span><span class="chip">Exploratory</span><span class="chip">End-to-end</span><span class="chip">Risk-based testing</span><span class="chip">Defect triage</span><span class="chip">API validation</span><span class="chip">Accessibility (WCAG 2.1 AA)</span><span class="chip">UAT</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <h3>Automation &amp; AI tooling</h3>
+        <div class="chips">
+          <span class="chip">Appium</span><span class="chip">Playwright</span><span class="chip">XCUITest</span><span class="chip">XCTest</span><span class="chip">Repeato</span><span class="chip">Claude Code CLI</span><span class="chip">Codex CLI</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <h3>Platforms &amp; languages</h3>
+        <div class="chips">
+          <span class="chip">iOS</span><span class="chip">Android</span><span class="chip">watchOS</span><span class="chip">Web</span><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">Objective-C</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <h3>Tools</h3>
+        <div class="chips">
+          <span class="chip">Jira</span><span class="chip">TestRail</span><span class="chip">GitHub</span><span class="chip">Jenkins</span><span class="chip">Xcode</span><span class="chip">Android Studio</span><span class="chip">Postman</span><span class="chip">Charles Proxy</span><span class="chip">Proxyman</span><span class="chip">Wireshark</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="edu">
+    <h2>Education</h2>
+    <p><strong>B.S. Music</strong> · Portland State University / Georgia Southern University (Armstrong Campus)</p>
+    <p><strong>iOS &amp; Swift Fundamentals</strong> · Big Nerd Ranch, 2023</p>
+  </section>
+
+  <footer>
+    <p>Open to senior mobile QA, release QA, and software test engineering roles, remote or Portland-based. <a href="mailto:williamlhowze@gmail.com">Email me</a> or connect on <a href="https://www.linkedin.com/in/bill-howze" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  </footer>
+
+</main>
+</body>
+</html>
