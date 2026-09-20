@@ -21,25 +21,47 @@
 
   <style>
     :root {
-      --bg: #fbfbfa;
+      --bg: #f6f8fb;
       --surface: #ffffff;
-      --text: #1b1f24;
-      --muted: #5b6470;
-      --line: #e3e6ea;
-      --accent: #1f6feb;
+      --text: #1b2333;
+      --muted: #5b6678;
+      --line: #dfe5ee;
+      --accent: #1d4ed8;
+      --accent-soft: #e4ecfb;
       --accent-ink: #ffffff;
+      --hero-a: #0f2a5c;
+      --hero-b: #1a4fa3;
+      --hero-text: #ffffff;
+      --hero-muted: #c7d6f2;
+      --cta: #f59e0b;
+      --cta-ink: #1b1400;
       --chip: #eef2f7;
+      --c1-bg: #e1ecff; --c1-fg: #1e3f8f;
+      --c2-bg: #dcf5ee; --c2-fg: #0f6b53;
+      --c3-bg: #ede6fb; --c3-fg: #5b3aa6;
+      --c4-bg: #fdecd8; --c4-fg: #8a4a06;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0f1216;
-        --surface: #161a20;
-        --text: #e8ecf1;
-        --muted: #9aa5b3;
-        --line: #262c35;
-        --accent: #6aa9ff;
+        --bg: #0e1218;
+        --surface: #161c25;
+        --text: #e6ebf2;
+        --muted: #9aa6b8;
+        --line: #273140;
+        --accent: #7fb0ff;
+        --accent-soft: #1b2a45;
         --accent-ink: #0b1220;
-        --chip: #1f2530;
+        --hero-a: #0a1a3a;
+        --hero-b: #123a7a;
+        --hero-text: #ffffff;
+        --hero-muted: #b7c8e8;
+        --cta: #fbbf24;
+        --cta-ink: #1b1400;
+        --chip: #1f2733;
+        --c1-bg: #1c2d52; --c1-fg: #b9cdfa;
+        --c2-bg: #123d33; --c2-fg: #9fe3cf;
+        --c3-bg: #2c2350; --c3-fg: #cdbdf7;
+        --c4-bg: #45290c; --c4-fg: #fbcf8f;
       }
     }
 
@@ -55,42 +77,74 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+    main.wrap { padding-top: 40px; padding-bottom: 80px; }
 
-    header { margin-bottom: 40px; }
-    .eyebrow { color: var(--muted); font-size: 14px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 6px; }
-    h1 { font-size: clamp(30px, 6vw, 42px); line-height: 1.1; margin: 0 0 8px; letter-spacing: -.02em; }
-    .role { font-size: 18px; color: var(--muted); margin: 0 0 20px; }
-    .links { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; font-size: 15px; }
-    .links a { display: inline-flex; align-items: center; gap: 6px; }
+    .hero {
+      background: linear-gradient(135deg, var(--hero-a) 0%, var(--hero-b) 100%);
+      color: var(--hero-text);
+      padding: 56px 0 44px;
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: ""; position: absolute; right: -120px; top: -120px; width: 380px; height: 380px;
+      border-radius: 50%; background: rgba(255,255,255,.06); pointer-events: none;
+    }
+    .hero::before {
+      content: ""; position: absolute; right: 60px; bottom: -160px; width: 260px; height: 260px;
+      border-radius: 50%; background: rgba(255,255,255,.05); pointer-events: none;
+    }
+    .hero .wrap { position: relative; }
+    .eyebrow { color: var(--hero-muted); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 8px; font-weight: 600; }
+    h1 { font-size: clamp(32px, 6vw, 46px); line-height: 1.05; margin: 0 0 10px; letter-spacing: -.02em; }
+    .role { font-size: 18px; color: var(--hero-muted); margin: 0 0 24px; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; font-size: 15px; }
+    .links a { display: inline-flex; align-items: center; gap: 6px; color: var(--hero-text); }
+    .links a:not(.btn) { opacity: .92; border-bottom: 1px solid rgba(255,255,255,.35); padding-bottom: 1px; }
+    .links a:not(.btn):hover { opacity: 1; text-decoration: none; border-bottom-color: #fff; }
     .links svg { width: 16px; height: 16px; fill: currentColor; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent); color: var(--accent-ink) !important;
-      padding: 9px 16px; border-radius: 8px; font-weight: 600;
+      background: var(--cta); color: var(--cta-ink) !important;
+      padding: 10px 18px; border-radius: 8px; font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0,0,0,.18);
     }
-    .btn:hover { text-decoration: none; filter: brightness(1.08); }
+    .btn:hover { text-decoration: none; filter: brightness(1.06); transform: translateY(-1px); }
 
     section { margin-bottom: 40px; }
     h2 {
-      font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--muted); margin: 0 0 16px; padding-bottom: 8px;
-      border-bottom: 1px solid var(--line);
+      font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700;
+      color: var(--accent); margin: 0 0 18px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--line); position: relative;
+    }
+    h2::after {
+      content: ""; position: absolute; left: 0; bottom: -1px; width: 44px; height: 3px;
+      background: var(--accent); border-radius: 2px;
     }
     p { margin: 0 0 12px; }
 
     .job { margin-bottom: 26px; }
     .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; margin-bottom: 4px; }
     .job-head h3 { font-size: 17px; margin: 0; }
-    .job-head .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
+    .job-head .when {
+      color: var(--accent); background: var(--accent-soft); font-size: 13px; font-weight: 600;
+      white-space: nowrap; padding: 2px 10px; border-radius: 999px; align-self: center;
+    }
     .job .where { color: var(--muted); font-size: 15px; margin: 0 0 8px; }
     .job ul { margin: 0; padding-left: 20px; }
     .job li { margin-bottom: 5px; }
+    .job li::marker { color: var(--accent); }
 
     .projects { display: grid; gap: 14px; }
     .card {
-      background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
+      background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+      border-radius: 10px; padding: 16px 18px;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,42,92,.10); }
+    .card:nth-child(2) { border-left-color: var(--c2-fg); }
+    .card:nth-child(3) { border-left-color: var(--c3-fg); }
+    .card:nth-child(4) { border-left-color: var(--c4-fg); }
     .card h3 { font-size: 16px; margin: 0 0 4px; }
     .card .kind { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
     .card p { margin: 0; font-size: 15px; }
@@ -98,22 +152,31 @@
     .skills { display: grid; gap: 14px; }
     .skill-row h3 { font-size: 14px; margin: 0 0 6px; color: var(--muted); font-weight: 600; }
     .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-    .chip { background: var(--chip); border-radius: 6px; padding: 3px 10px; font-size: 14px; }
+    .chip { background: var(--chip); border-radius: 6px; padding: 3px 10px; font-size: 14px; font-weight: 500; }
+    .c1 .chip { background: var(--c1-bg); color: var(--c1-fg); }
+    .c2 .chip { background: var(--c2-bg); color: var(--c2-fg); }
+    .c3 .chip { background: var(--c3-bg); color: var(--c3-fg); }
+    .c4 .chip { background: var(--c4-bg); color: var(--c4-fg); }
 
     .edu p { margin: 0 0 6px; }
-    footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 20px; }
+    footer {
+      color: var(--text); font-size: 15px; background: var(--accent-soft);
+      border-radius: 10px; padding: 18px 20px; border-left: 4px solid var(--accent);
+    }
+    footer p { margin: 0; }
 
     @media print {
       body { background: #fff; color: #000; }
+      .hero { background: none; color: #000; padding: 0 0 16px; }
+      .hero .links a, .eyebrow, .role { color: #000; }
       .btn { display: none; }
       .wrap { padding: 0; max-width: none; }
     }
   </style>
 </head>
 <body>
-<main class="wrap">
-
-  <header>
+<header class="hero">
+  <div class="wrap">
     <p class="eyebrow">Portland, Oregon · Remote</p>
     <h1>Bill Howze</h1>
     <p class="role">Senior Mobile QA Engineer · Release QA · Software Test Engineer</p>
@@ -135,7 +198,10 @@
         GitHub
       </a>
     </nav>
-  </header>
+  </div>
+</header>
+
+<main class="wrap">
 
   <section id="about">
     <h2>About</h2>
@@ -226,25 +292,25 @@
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
-      <div class="skill-row">
+      <div class="skill-row c1">
         <h3>Testing</h3>
         <div class="chips">
           <span class="chip">Release QA &amp; sign-off</span><span class="chip">Test strategy</span><span class="chip">Regression</span><span class="chip">Exploratory</span><span class="chip">End-to-end</span><span class="chip">Risk-based testing</span><span class="chip">Defect triage</span><span class="chip">API validation</span><span class="chip">Accessibility (WCAG 2.1 AA)</span><span class="chip">UAT</span>
         </div>
       </div>
-      <div class="skill-row">
+      <div class="skill-row c2">
         <h3>Automation &amp; AI tooling</h3>
         <div class="chips">
           <span class="chip">Appium</span><span class="chip">Playwright</span><span class="chip">XCUITest</span><span class="chip">XCTest</span><span class="chip">Repeato</span><span class="chip">Claude Code CLI</span><span class="chip">Codex CLI</span>
         </div>
       </div>
-      <div class="skill-row">
+      <div class="skill-row c3">
         <h3>Platforms &amp; languages</h3>
         <div class="chips">
           <span class="chip">iOS</span><span class="chip">Android</span><span class="chip">watchOS</span><span class="chip">Web</span><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">Objective-C</span>
         </div>
       </div>
-      <div class="skill-row">
+      <div class="skill-row c4">
         <h3>Tools</h3>
         <div class="chips">
           <span class="chip">Jira</span><span class="chip">TestRail</span><span class="chip">GitHub</span><span class="chip">Jenkins</span><span class="chip">Xcode</span><span class="chip">Android Studio</span><span class="chip">Postman</span><span class="chip">Charles Proxy</span><span class="chip">Proxyman</span>
@@ -257,6 +323,7 @@
     <h2>Education</h2>
     <p><strong>B.S. Music</strong> · Portland State University / Georgia Southern University (Armstrong Campus)</p>
     <p><strong>iOS &amp; Swift Fundamentals</strong> · Big Nerd Ranch, 2023</p>
+    <p><strong>Continuing education</strong> · Udemy courses in mobile test automation, Swift, and AI-assisted development, plus ongoing on-the-job training in new tools and frameworks as each role requires</p>
   </section>
 
   <footer>
